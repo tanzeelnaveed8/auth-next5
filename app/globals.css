@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+  font-family: 'Creepster', cursive;
+}
+.horror-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  color: crimson;
+  font-family: 'Creepster', cursive;
+  text-align: center;
+}
+
+.horror-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay to make text more readable */
+  z-index: 1;
+}
+
+.horror-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire background */
+  z-index: 0; /* Keep the video behind the text */
+}
+
+.horror-text {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  text-shadow: 0 0 10px crimson, 0 0 20px red;
+  z-index: 2;
+}
+
+.horror-button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: black;
+  color: crimson;
+  border: 2px solid crimson;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.horror-button:hover {
+  background-color: crimson;
+  color: black;
+}
